@@ -38,7 +38,7 @@ def is_leap_year(year):
     return False
 
 # 西暦を入力してもらい、その年のカレンダーを表示
-y = int(input('西暦(4桁)を入力してください。: '))
+y = int(input('西暦(4桁)を入力してください: '))
 
 leap = is_leap_year(y)
 
