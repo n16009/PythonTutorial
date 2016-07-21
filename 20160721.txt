@@ -1,0 +1,10 @@
+string.ascii_lowercase
+少文字のローマ字が入っている。この値はロケールに依存せず、固定。
+ある変数がアルファベットかどうかをチェックするときに使う。lowercaseには少文字すべてが入っている。
+
+string.ascii_uppercase
+大文字のローマ字が入っている。この値はロケールに依存せず、固定。
+ある変数がアルファベットかどうかをチェックするときに使う。uppercaseには大文字すべてが入っている。
+
+string.ascii_letters
+lowercaseとuppercaseを合わせたもの。この値はロケールに依存しません。
