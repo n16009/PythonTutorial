@@ -1,8 +1,9 @@
-while True:
+"""while True:
     try:
         x = int(input('数字を入れてください: '))
         break
     except (TypeError, NameError, ValueError):
         print("数字じゃないじゃん")
 
-    print('もう一度！')
+    print('もう一度！')"""
+
