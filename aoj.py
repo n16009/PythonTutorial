@@ -1,3 +1,4 @@
+"""
 # a, b = [int(i) for i in input().split()]
 #W, H, x, y, r = [int(i) for i in input().split()]
 
@@ -11,7 +12,7 @@
 
 #if __name__ == '__main__':
 #    main()
-"""
+
 while True:
     a, op, b = input().sprit()
     a = int(a)
@@ -104,18 +105,64 @@ for bi, b in enumerate(data):
         print()
     if bi < 3:
         print('#' * 20)
+
+
+
+n, m = [int(i) for i in input().split()]
+
+matrix = []
+for ni in range(n):
+    matrix.append([int(a) for a in input().split()])
+
+vector = []
+for mi in range(m):
+    vector.append(int(input()))
+
+for ni in range(n):
+    sum = 0
+    for mi in range(m):
+        sum += matrix[ni][mi] * vector[mi]
+
+    print(sum)
+
+
+while True:
+    m, f, r = [int(i) for i in input().split()]
+
+    if m == f == r == -1:
+        break
+
+    total = m + f
+    if m == -1 or f == -1 or total < 30:
+        print('F')
+
+    elif total < 50 and r < 50:
+        print('D')
+
+    elif total < 65:
+        print('C')
+
+    elif total < 80:
+        print('B')
+
+    else:
+        print('A')
+
+
+
+while True:
+    n, x = [int(i) for i in input().split()]
+
+    if n == x == 0:
+        break
+
+    count = 0
+    for s in range(1, n - 1):
+        for m in range(s + 1, n):
+            for e in range(m + 1, n + 1):
+                if x == sum([s, m, e]):
+                    count += 1
+
+    print(count)
 """
 
-def solve(n, m, a, b):
-    res = []
-    for i in range(n):
-        s = [a[i][j] * b[j] for j in range(m)]
-        res.append(sum(s))
-    return res
-
-if __name__ == '__main__':
-    n, m = [int(i) for i in input().split()]
-    a = [[int(i) for i in input().split()] for _ in range(n)]
-    b = [for i in input()] for _ in range(m)]
-    for x in solve(n, m, a, b):
-        print(x)

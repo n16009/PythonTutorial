@@ -43,6 +43,8 @@ def calc_rate(d, w, a):
     else: p = w / (a - d)
     return p
 
+# def save_score(result):
+
 
 if __name__ == "__main__":
     draw, win, all = 0.0, 0.0, 0.0
