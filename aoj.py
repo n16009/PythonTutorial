@@ -164,5 +164,51 @@ while True:
                     count += 1
 
     print(count)
-"""
 
+
+r, c = [int(i) for i in input().split()]
+
+data = []
+sum_row = [0] * (c + 1)
+
+for ri in range(r):
+    data.append([int(i) for i in input().split()])
+    data[ri].append(sum(data[ri]))
+    print(" ".join([str(d) for d in data[ri]]))
+    for ci in range(c + 1):
+        sum_row[ci] += data[ri][ci]
+
+print(" ".join([str(s) for s in sum_row]))
+
+
+
+n, m, l = [int(i) for i in input().split()]
+
+A = []
+B = []
+C = []
+
+for ni in range(n):
+    A.append([int(i) for i in input().split()])
+
+for mi in range(m):
+    B.append([int(i) for i in input().split()])
+
+for i in range(n):
+    C.append([])
+    for j in range(l):
+        C[i].append(0)
+        for k in range(m):
+            C[i][j] += A[i][k] * B[k][j]
+
+for li in range(n):
+    print(" ".join([str(s) for s in C[li]]))
+
+
+while True:
+    data = input()
+    if data[0] == '0':
+        break
+
+    print(sum([int(i) for i in data]))
+"""
