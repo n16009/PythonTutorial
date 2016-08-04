@@ -211,4 +211,10 @@ while True:
         break
 
     print(sum([int(i) for i in data]))
+
+    for integer, numeral in self.known_values:
+            result = roman1.to_roman(integer)
+            self.assertEqual(numeral, result)
+
 """
+
