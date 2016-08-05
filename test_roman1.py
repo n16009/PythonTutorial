@@ -5,7 +5,7 @@ import unittest
 
 class KnownValues(unittest.TestCase):
     known_values = ((1, 'I'),
-                    (2,'II'),
+                    (2, 'II'),
                     (3, 'III'),
                     (4, 'IV'),
                     (5, 'V'),
@@ -71,7 +71,7 @@ class KnownValues(unittest.TestCase):
         """from_roman should give known result with known input"""
         for integer, numeral in self.known_values:
             result = roman1.from_roman(numeral)
-            self.assertEqual(integer, result)
+            self.assertEqual(numeral, result)
 
 
 class ToRomanBadInput(unittest.TestCase):
@@ -88,17 +88,17 @@ class ToRomanBadInput(unittest.TestCase):
         self.assertRaises(roman1.OutOfRangeError, roman1.to_roman, -1)
 
     def test_non_integer(self):
-        """to_roman should fail with non_integer input"""
+        """to_roman should fail with non-integer input"""
         self.assertRaises(roman1.NotIntegerError, roman1.to_roman, 0.5)
 
 
-class RoundtripCheck(unittest.TestCase):
+class RoundTripCheck(unittest.TestCase):
     def test_roundtrip(self):
         """from_roman(to_roman(n)) == n for all n"""
         for integer in range(1, 4000):
             numeral = roman1.to_roman(integer)
             result = roman1.from_roman(numeral)
-            self.assertEqual(integer, result)
+            self.assertEqual(numeral, result)
 
 
 class FromRomanBadInput(unittest.TestCase):
@@ -114,8 +114,7 @@ class FromRomanBadInput(unittest.TestCase):
 
     def test_malformed_antecedents(self):
         """from_roman should fail with malformed antecedents"""
-        for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV'
-                  'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+        for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV', 'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
             self.assertRaises(roman1.InvalidRomanNumeralError, roman1.from_roman, s)
 
 if __name__ == '__main__':

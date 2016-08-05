@@ -216,5 +216,56 @@ while True:
             result = roman1.to_roman(integer)
             self.assertEqual(numeral, result)
 
+
+
+import string
+
+count = {x: 0 for x in string.ascii_lowercase}
+lines = ""
+
+while True:
+    try:
+        lines += input().lower()
+    except EOFError:
+        break
+
+for c in lines:
+    if 'a' <= c <= 'z':
+        count[c] += 1
+
+for key, in string.ascii_lowercase:
+    print("{0} : {1}".format(key, count[key]))
+
+s = input()
+p = input()
+s += s
+if p in s:
+    print('Yes')
+else:
+    print('No')
+
+count = 0
+word = "".join([x.lower() for x in input().split()])
+while True:
+    line = input().split()
+    if "END_OF_TEXT" in line:
+        break
+    for s in line:
+        if word == "".join([x.lower() for x in s]):
+            count += 1
+print(count)
+
+
+while True:
+    s = input()
+    if s == '-':
+        break
+
+    m = int(input())
+    for mi in range(m):
+        h = int(input())
+        s = s[h:] + s[:h]
+
+    print(s)
 """
 
