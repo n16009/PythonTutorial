@@ -299,4 +299,3 @@ for _ in range(q):
         s = s[:a] + x[3] + s[b+1:]
 """
 
-
